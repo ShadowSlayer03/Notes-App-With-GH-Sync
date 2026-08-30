@@ -1,0 +1,10 @@
+{
+	"name": "Kairno",
+	"short_name": "Kairno",
+	"description": "A Git-backed notes app that keeps your notes versioned, portable, and yours.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#0B0B12",
+	"theme_color": "#0B0B12",
+	"orientation": "any"
+}
