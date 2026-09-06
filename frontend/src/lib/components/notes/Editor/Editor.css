@@ -1,0 +1,1143 @@
+:root {
+    --kairno-bg: #09090b;
+    --kairno-surface: #111115;
+    --kairno-surface-2: #17171c;
+    --kairno-surface-3: #202028;
+
+    --kairno-border: rgba(255, 255, 255, 0.07);
+    --kairno-border-hover: rgba(255, 255, 255, 0.14);
+
+    --kairno-text: #f5f5f7;
+    --kairno-text-secondary: #b5b5be;
+    --kairno-text-muted: #80808a;
+
+    --kairno-primary: #d946ef;
+    --kairno-primary-light: #ec7bff;
+    --kairno-primary-dark: #8b2be2;
+
+    --kairno-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 20px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   BASE EDITOR THEME
+   ========================================================= */
+
+.editor-root {
+    /* Actual background color */
+    --editor-bg-color: #09090b;
+
+    /* Actual background image/pattern */
+    --editor-bg-image: none;
+
+    /* Text */
+    --editor-text: #f5f5f7;
+    --editor-heading: #ffffff;
+    --editor-secondary: #b5b5be;
+
+    /* Code */
+    --editor-code: #121217;
+
+    /* Selection */
+    --editor-selection: rgba(217, 70, 239, 0.22);
+
+    /* Accent / UI */
+    --editor-ui: #b78cff;
+    --editor-ui-hover: #d946ef;
+    --editor-ui-muted: #8d7cb3;
+
+    /* UI backgrounds */
+    --editor-ui-selection: rgba(217, 70, 239, 0.14);
+    --editor-ui-border: rgba(217, 70, 239, 0.2);
+
+    /* Block handle */
+    --editor-handle-bg: transparent;
+    --editor-handle-hover-bg: var(--editor-ui-selection);
+    --editor-handle-color: var(--editor-ui);
+    --editor-handle-hover-color: var(--editor-ui-hover);
+
+    /* Menus */
+    --editor-menu-bg: #17171c;
+    --editor-menu-border: rgba(255, 255, 255, 0.08);
+
+    /* Scrollbar */
+    --editor-scrollbar: rgba(217, 70, 239, 0.28);
+    --editor-scrollbar-hover: rgba(217, 70, 239, 0.45);
+}
+
+
+/* =========================================================
+   PAPER
+   ========================================================= */
+
+.editor-root[data-theme='paper'] {
+    --editor-bg-color: #fcfaf6;
+    --editor-bg-image: none;
+
+    --editor-text: #292524;
+    --editor-heading: #1c1917;
+    --editor-secondary: #57534e;
+
+    --editor-code: #f2efe8;
+
+    --editor-selection: rgba(99, 102, 241, 0.18);
+
+    --editor-ui: #6366f1;
+    --editor-ui-hover: #4f46e5;
+    --editor-ui-muted: #818cf8;
+
+    --editor-ui-selection: rgba(99, 102, 241, 0.12);
+    --editor-ui-border: rgba(99, 102, 241, 0.2);
+
+    --editor-handle-hover-bg: rgba(99, 102, 241, 0.1);
+    --editor-handle-color: #6366f1;
+    --editor-handle-hover-color: #4f46e5;
+
+    --editor-menu-bg: #fffdf9;
+    --editor-menu-border: rgba(41, 37, 36, 0.12);
+
+    --editor-scrollbar: rgba(99, 102, 241, 0.28);
+    --editor-scrollbar-hover: rgba(99, 102, 241, 0.45);
+}
+
+
+/* =========================================================
+   PARCHMENT
+   ========================================================= */
+
+.editor-root[data-theme='parchment'] {
+    --editor-bg-color: #f7edd6;
+    --editor-bg-image: none;
+
+    --editor-text: #4b3724;
+    --editor-heading: #3d2a18;
+    --editor-secondary: #6d5843;
+
+    --editor-code: #efe2c2;
+
+    --editor-selection: rgba(181, 137, 0, 0.18);
+
+    --editor-ui: #a16207;
+    --editor-ui-hover: #ca8a04;
+    --editor-ui-muted: #b88935;
+
+    --editor-ui-selection: rgba(181, 137, 0, 0.12);
+    --editor-ui-border: rgba(181, 137, 0, 0.2);
+
+    --editor-handle-hover-bg: rgba(181, 137, 0, 0.1);
+    --editor-handle-color: #a16207;
+    --editor-handle-hover-color: #ca8a04;
+
+    --editor-menu-bg: #f8efd9;
+    --editor-menu-border: rgba(75, 55, 36, 0.15);
+
+    --editor-scrollbar: rgba(161, 98, 7, 0.28);
+    --editor-scrollbar-hover: rgba(161, 98, 7, 0.45);
+}
+
+
+/* =========================================================
+   GRAPH
+   ========================================================= */
+
+.editor-root[data-theme='graph'] {
+    --editor-bg-color: #fcfdff;
+
+    --editor-bg-image:
+        linear-gradient(rgba(37, 99, 235, 0.14) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(37, 99, 235, 0.14) 1px,
+            transparent 1px);
+
+    --editor-text: #243447;
+    --editor-heading: #17395f;
+    --editor-secondary: #607388;
+
+    --editor-code: #eef6ff;
+
+    --editor-selection: rgba(37, 99, 235, 0.16);
+
+    --editor-ui: #2563eb;
+    --editor-ui-hover: #1d4ed8;
+    --editor-ui-muted: #5b8def;
+
+    --editor-ui-selection: rgba(37, 99, 235, 0.12);
+    --editor-ui-border: rgba(37, 99, 235, 0.2);
+
+    --editor-handle-hover-bg: rgba(37, 99, 235, 0.1);
+    --editor-handle-color: #2563eb;
+    --editor-handle-hover-color: #1d4ed8;
+
+    --editor-menu-bg: #f8fbff;
+    --editor-menu-border: rgba(37, 99, 235, 0.15);
+
+    --editor-scrollbar: rgba(37, 99, 235, 0.28);
+    --editor-scrollbar-hover: rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.editor-root[data-theme='grid'] {
+    --editor-bg-color: #fafafa;
+
+    /*
+	 * Two perpendicular lines.
+	 *
+	 * IMPORTANT:
+	 * This is on --editor-bg-image, not --editor-bg.
+	 */
+    --editor-bg-image:
+        linear-gradient(rgba(79, 70, 229, 0.13) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(79, 70, 229, 0.13) 1px,
+            transparent 1px);
+
+    --editor-text: #222222;
+    --editor-heading: #111827;
+    --editor-secondary: #666666;
+
+    --editor-code: #f3f3f3;
+
+    --editor-selection: rgba(79, 70, 229, 0.14);
+
+    --editor-ui: #4f46e5;
+    --editor-ui-hover: #4338ca;
+    --editor-ui-muted: #6366f1;
+
+    --editor-ui-selection: rgba(79, 70, 229, 0.1);
+    --editor-ui-border: rgba(79, 70, 229, 0.18);
+
+    --editor-handle-hover-bg: rgba(79, 70, 229, 0.1);
+    --editor-handle-color: #4f46e5;
+    --editor-handle-hover-color: #4338ca;
+
+    --editor-menu-bg: #ffffff;
+    --editor-menu-border: rgba(34, 34, 34, 0.12);
+
+    --editor-scrollbar: rgba(79, 70, 229, 0.28);
+    --editor-scrollbar-hover: rgba(79, 70, 229, 0.45);
+}
+
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.editor-root[data-theme='dots'] {
+    --editor-bg-color: #fcfcfc;
+
+    /*
+	 * Visible dots.
+	 *
+	 * Using rgba + 2px radius makes the pattern much more
+	 * obvious than the previous 1px gray dot.
+	 */
+    --editor-bg-image:
+        radial-gradient(circle,
+            rgba(79, 70, 229, 0.32) 1.5px,
+            transparent 1.5px);
+
+    --editor-text: #202020;
+    --editor-heading: #111111;
+    --editor-secondary: #666666;
+
+    --editor-code: #f2f2f2;
+
+    --editor-selection: rgba(99, 102, 241, 0.14);
+
+    --editor-ui: #6366f1;
+    --editor-ui-hover: #4f46e5;
+    --editor-ui-muted: #818cf8;
+
+    --editor-ui-selection: rgba(99, 102, 241, 0.1);
+    --editor-ui-border: rgba(99, 102, 241, 0.18);
+
+    --editor-handle-hover-bg: rgba(99, 102, 241, 0.1);
+    --editor-handle-color: #6366f1;
+    --editor-handle-hover-color: #4f46e5;
+
+    --editor-menu-bg: #ffffff;
+    --editor-menu-border: rgba(32, 32, 32, 0.12);
+
+    --editor-scrollbar: rgba(99, 102, 241, 0.28);
+    --editor-scrollbar-hover: rgba(99, 102, 241, 0.45);
+}
+
+
+/* =========================================================
+   LINEN
+   ========================================================= */
+
+.editor-root[data-theme='linen'] {
+    --editor-bg-color: #f8f7f3;
+
+    --editor-bg-image:
+        repeating-linear-gradient(90deg,
+            #f4f2ed 0px,
+            #f4f2ed 2px,
+            #f8f7f3 2px,
+            #f8f7f3 6px);
+
+    --editor-text: #363636;
+    --editor-heading: #2f2f2f;
+    --editor-secondary: #676767;
+
+    --editor-code: #ece9e3;
+
+    --editor-selection: rgba(120, 113, 108, 0.14);
+
+    --editor-ui: #78716c;
+    --editor-ui-hover: #57534e;
+    --editor-ui-muted: #a8a29e;
+
+    --editor-ui-selection: rgba(120, 113, 108, 0.1);
+    --editor-ui-border: rgba(120, 113, 108, 0.18);
+
+    --editor-handle-hover-bg: rgba(120, 113, 108, 0.1);
+    --editor-handle-color: #78716c;
+    --editor-handle-hover-color: #57534e;
+
+    --editor-menu-bg: #f9f7f2;
+    --editor-menu-border: rgba(54, 54, 54, 0.12);
+
+    --editor-scrollbar: rgba(120, 113, 108, 0.28);
+    --editor-scrollbar-hover: rgba(120, 113, 108, 0.45);
+}
+
+
+/* =========================================================
+   TERMINAL
+   ========================================================= */
+
+.editor-root[data-theme='terminal'] {
+    --editor-bg-color: #000000;
+    --editor-bg-image: none;
+
+    --editor-text: #42ff74;
+    --editor-heading: #42ff74;
+    --editor-secondary: #2bc252;
+
+    --editor-code: #09130b;
+
+    --editor-selection: rgba(66, 255, 116, 0.2);
+
+    --editor-ui: #42ff74;
+    --editor-ui-hover: #6aff91;
+    --editor-ui-muted: #2bc252;
+
+    --editor-ui-selection: rgba(66, 255, 116, 0.12);
+    --editor-ui-border: rgba(66, 255, 116, 0.2);
+
+    --editor-handle-hover-bg: rgba(66, 255, 116, 0.1);
+    --editor-handle-color: #42ff74;
+    --editor-handle-hover-color: #6aff91;
+
+    --editor-menu-bg: #061008;
+    --editor-menu-border: rgba(66, 255, 116, 0.18);
+
+    --editor-scrollbar: rgba(66, 255, 116, 0.28);
+    --editor-scrollbar-hover: rgba(66, 255, 116, 0.45);
+}
+
+
+/* =========================================================
+   MIDNIGHT
+   ========================================================= */
+
+.editor-root[data-theme='midnight'] {
+    --editor-bg-color: #101826;
+    --editor-bg-image: none;
+
+    --editor-text: #f1f5f9;
+    --editor-heading: #ffffff;
+    --editor-secondary: #94a3b8;
+
+    --editor-code: #1a2334;
+
+    --editor-selection: rgba(59, 130, 246, 0.2);
+
+    --editor-ui: #3b82f6;
+    --editor-ui-hover: #60a5fa;
+    --editor-ui-muted: #64748b;
+
+    --editor-ui-selection: rgba(59, 130, 246, 0.12);
+    --editor-ui-border: rgba(59, 130, 246, 0.2);
+
+    --editor-handle-hover-bg: rgba(59, 130, 246, 0.1);
+    --editor-handle-color: #3b82f6;
+    --editor-handle-hover-color: #60a5fa;
+
+    --editor-menu-bg: #111b2c;
+    --editor-menu-border: rgba(59, 130, 246, 0.18);
+
+    --editor-scrollbar: rgba(59, 130, 246, 0.28);
+    --editor-scrollbar-hover: rgba(59, 130, 246, 0.45);
+}
+
+
+/* =========================================================
+   SEPIA
+   ========================================================= */
+
+.editor-root[data-theme='sepia'] {
+    --editor-bg-color: #fbf4e6;
+    --editor-bg-image: none;
+
+    --editor-text: #433422;
+    --editor-heading: #34220e;
+    --editor-secondary: #76624d;
+
+    --editor-code: #f2ead8;
+
+    --editor-selection: rgba(161, 98, 7, 0.18);
+
+    --editor-ui: #a16207;
+    --editor-ui-hover: #92400e;
+    --editor-ui-muted: #a1845d;
+
+    --editor-ui-selection: rgba(161, 98, 7, 0.1);
+    --editor-ui-border: rgba(161, 98, 7, 0.18);
+
+    --editor-handle-hover-bg: rgba(161, 98, 7, 0.1);
+    --editor-handle-color: #a16207;
+    --editor-handle-hover-color: #92400e;
+
+    --editor-menu-bg: #fff8ea;
+    --editor-menu-border: rgba(67, 52, 34, 0.14);
+
+    --editor-scrollbar: rgba(161, 98, 7, 0.28);
+    --editor-scrollbar-hover: rgba(161, 98, 7, 0.45);
+}
+
+
+/* =========================================================
+   EDITOR SHELL
+   ========================================================= */
+
+.editor-shell {
+    width: 100%;
+    max-width: 1500px;
+    margin: 24px auto;
+    padding: 18px;
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.005)),
+        var(--kairno-surface);
+
+    border: 1px solid var(--kairno-border);
+    box-shadow: var(--kairno-shadow);
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.toolbar-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--kairno-border);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: var(--kairno-text-secondary);
+
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        color 0.2s;
+}
+
+.toolbar-button:hover {
+    border-color: rgba(217, 70, 239, 0.3);
+    background: rgba(217, 70, 239, 0.1);
+    color: white;
+}
+
+.toolbar-icon {
+    color: var(--kairno-primary-light);
+}
+
+.pin-button {
+    width: 40px;
+    padding: 0;
+
+    justify-content: center;
+}
+
+.pin-button.pinned {
+    border-color: rgba(217, 70, 239, 0.3);
+    background: rgba(217, 70, 239, 0.1);
+    color: var(--kairno-primary-light);
+}
+
+.theme-label {
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+
+    padding: 2px 8px;
+
+    font-size: 12px;
+
+    color: var(--kairno-text-muted);
+}
+
+
+/* =========================================================
+   THEME PICKER
+   ========================================================= */
+
+.theme-picker {
+    position: absolute;
+
+    right: 0;
+    top: 56px;
+
+    z-index: 50;
+
+    display: grid;
+
+    width: 470px;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border-radius: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(9, 9, 11, 0.96);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(20px);
+}
+
+.theme-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    border: 1px solid transparent;
+
+    text-align: left;
+
+    transition:
+        border-color 0.2s,
+        background 0.2s;
+}
+
+.theme-option:hover {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.theme-option.selected {
+    border-color: rgba(217, 70, 239, 0.4);
+    background: rgba(217, 70, 239, 0.1);
+}
+
+.theme-option-title {
+    color: white;
+    font-weight: 500;
+}
+
+.theme-option-description {
+    margin-top: 2px;
+
+    color: #71717a;
+
+    font-size: 12px;
+}
+
+.theme-check {
+    color: #d946ef;
+}
+
+
+/* =========================================================
+   THEME PREVIEWS
+   ========================================================= */
+
+.theme-preview {
+    position: relative;
+
+    width: 44px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
+    background: #fafafa;
+}
+
+.theme-preview[data-preview-theme='dots'] {
+    background-color: #fcfcfc;
+
+    background-image:
+        radial-gradient(circle,
+            rgba(79, 70, 229, 0.35) 1px,
+            transparent 1px);
+
+    background-size: 7px 7px;
+}
+
+.theme-preview[data-preview-theme='grid'] {
+    background-color: #fafafa;
+
+    background-image:
+        linear-gradient(rgba(79, 70, 229, 0.2) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(79, 70, 229, 0.2) 1px,
+            transparent 1px);
+
+    background-size: 8px 8px;
+}
+
+.theme-preview[data-preview-theme='graph'] {
+    background-color: #fcfdff;
+
+    background-image:
+        linear-gradient(rgba(37, 99, 235, 0.18) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(37, 99, 235, 0.18) 1px,
+            transparent 1px);
+
+    background-size: 8px 8px;
+}
+
+.theme-preview[data-preview-theme='terminal'] {
+    background: #000;
+}
+
+.theme-preview[data-preview-theme='midnight'] {
+    background: #101826;
+}
+
+.theme-preview[data-preview-theme='paper'] {
+    background: #fcfaf6;
+}
+
+.theme-preview[data-preview-theme='parchment'] {
+    background: #f7edd6;
+}
+
+.theme-preview[data-preview-theme='linen'] {
+    background:
+        repeating-linear-gradient(90deg,
+            #f4f2ed 0,
+            #f4f2ed 2px,
+            #f8f7f3 2px,
+            #f8f7f3 6px);
+}
+
+.theme-preview[data-preview-theme='sepia'] {
+    background: #fbf4e6;
+}
+
+.preview-line {
+    position: relative;
+
+    margin: 12px 8px 0;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.preview-line.short {
+    width: 55%;
+}
+
+
+/* =========================================================
+   MILKDOWN
+   ========================================================= */
+
+.milkdown {
+    --crepe-font-default: 'Kanit', sans-serif;
+    --crepe-font-title: 'Kanit', serif;
+    --crepe-font-code: 'Fira Code', monospace;
+
+    --crepe-color-background: var(--editor-bg-color);
+    --crepe-color-surface: var(--editor-code);
+    --crepe-color-surface-low: var(--editor-bg-color);
+
+    --crepe-color-on-background: var(--editor-text);
+    --crepe-color-on-surface: var(--editor-text);
+    --crepe-color-on-surface-variant: var(--editor-text);
+    --crepe-color-outline: var(--editor-secondary);
+
+    --crepe-color-primary: var(--editor-ui);
+    --crepe-color-secondary: var(--editor-ui-muted);
+
+    --crepe-color-hover: var(--editor-ui-selection);
+    --crepe-color-selected: var(--editor-ui-selection);
+
+    color: var(--editor-text);
+
+    background: transparent;
+}
+
+
+/* =========================================================
+   ACTUAL EDITOR SURFACE
+   ========================================================= */
+
+.milkdown .editor {
+    position: relative;
+
+    padding: 2.75rem 5.5rem;
+
+    min-height: 80vh;
+
+    background-color: var(--editor-bg-color);
+    background-image: var(--editor-bg-image);
+
+    background-repeat: repeat;
+    background-position: 0 0;
+
+    background-size: var(--editor-bg-size, auto);
+
+    border: 1px solid var(--editor-ui-border);
+
+    border-radius: 18px;
+
+    color: var(--editor-text);
+
+    line-height: 1.85;
+
+    font-size: 17px;
+
+    transition:
+        background-color 0.25s,
+        color 0.25s,
+        border-color 0.25s,
+        box-shadow 0.25s;
+
+    overflow: visible;
+}
+
+
+/* Pattern sizes */
+
+.editor-root[data-theme='graph'] .editor {
+    --editor-bg-size: 32px 32px;
+}
+
+.editor-root[data-theme='grid'] .editor {
+    --editor-bg-size: 24px 24px;
+}
+
+.editor-root[data-theme='dots'] .editor {
+    --editor-bg-size: 22px 22px;
+}
+
+.editor-root[data-theme='linen'] .editor {
+    --editor-bg-size: auto;
+}
+
+
+/* =========================================================
+   EDITOR FOCUS
+   ========================================================= */
+
+.milkdown .editor:focus-within {
+    border-color: var(--editor-ui);
+
+    box-shadow:
+        inset 0 0 0 1px var(--editor-ui-border),
+        0 0 0 1px var(--editor-ui-selection),
+        0 0 40px var(--editor-ui-selection);
+}
+
+
+/* =========================================================
+   PROSEMIRROR
+   ========================================================= */
+
+.milkdown .ProseMirror {
+    caret-color: var(--editor-ui);
+    color: var(--editor-text);
+}
+
+.milkdown .ProseMirror:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   BLOCK HANDLE
+   ========================================================= */
+
+.milkdown .milkdown-block-handle {
+    top: 0;
+
+    color: var(--editor-handle-color);
+
+    background: var(--editor-handle-bg);
+}
+
+.milkdown .milkdown-block-handle,
+.milkdown .milkdown-block-handle * {
+    color: var(--editor-handle-color);
+}
+
+.milkdown .milkdown-block-handle svg {
+    color: var(--editor-handle-color);
+
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.milkdown .milkdown-block-handle svg *,
+.milkdown .milkdown-block-handle path,
+.milkdown .milkdown-block-handle line,
+.milkdown .milkdown-block-handle polyline,
+.milkdown .milkdown-block-handle polygon {
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+.milkdown .milkdown-block-handle button {
+    color: var(--editor-handle-color);
+
+    background: transparent;
+
+    border: none;
+}
+
+.milkdown .milkdown-block-handle:hover,
+.milkdown .milkdown-block-handle:hover *,
+.milkdown .milkdown-block-handle button:hover,
+.milkdown .milkdown-block-handle button:hover * {
+    color: var(--editor-handle-hover-color);
+}
+
+.milkdown .milkdown-block-handle button:hover {
+    background: var(--editor-handle-hover-bg);
+}
+
+.milkdown .milkdown-block-handle:hover svg,
+.milkdown .milkdown-block-handle:hover svg * {
+    color: var(--editor-handle-hover-color);
+
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+
+/* =========================================================
+   CREPE OPERATION / SLASH / TOOLBAR UI
+   ========================================================= */
+
+.milkdown .operation-item,
+.milkdown .operation-item button,
+.milkdown .operation-item svg {
+    color: var(--editor-ui);
+}
+
+.milkdown .operation-item:hover,
+.milkdown .operation-item:hover button,
+.milkdown .operation-item:hover svg {
+    color: var(--editor-ui-hover);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+.milkdown .ProseMirror ::selection,
+.milkdown .ProseMirror::selection,
+.milkdown ::selection {
+    background: var(--editor-selection);
+    color: var(--editor-text);
+}
+
+
+/* =========================================================
+   EMPTY PLACEHOLDER
+   ========================================================= */
+
+.milkdown .ProseMirror p.is-editor-empty:first-child::before {
+    color: var(--editor-secondary);
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   FLOATING MENUS
+   ========================================================= */
+
+.milkdown .tooltip,
+.milkdown .menu,
+.milkdown .popover {
+    background: var(--editor-menu-bg);
+
+    border: 1px solid var(--editor-menu-border);
+
+    border-radius: 14px;
+
+    color: var(--editor-text);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Menu text/icons */
+
+.milkdown .menu *,
+.milkdown .popover *,
+.milkdown .tooltip * {
+    color: inherit;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+
+.milkdown p {
+    color: var(--editor-secondary);
+    margin: 0;
+}
+
+.milkdown h1,
+.milkdown h2,
+.milkdown h3,
+.milkdown h4,
+.milkdown h5,
+.milkdown h6 {
+    color: var(--editor-heading);
+    margin-bottom: 1rem;
+}
+
+.milkdown h1 {
+    font-size: 3rem;
+    font-weight: 800;
+
+    margin-bottom: 2rem;
+}
+
+.milkdown h2 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-top: 2.5rem;
+}
+
+.milkdown h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    margin-top: 2rem;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.milkdown a {
+    color: var(--editor-ui);
+
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+.milkdown a:hover {
+    color: var(--editor-ui-hover);
+}
+
+
+/* =========================================================
+   BLOCKQUOTE
+   ========================================================= */
+
+.milkdown blockquote {
+    border-left: 3px solid var(--editor-ui);
+
+    background: var(--editor-ui-selection);
+
+    border-radius: 12px;
+
+    padding: 1rem 1.5rem;
+
+    color: var(--editor-secondary);
+}
+
+
+/* =========================================================
+   INLINE CODE
+   ========================================================= */
+
+.milkdown code {
+    background: var(--editor-code);
+
+    border: 1px solid var(--editor-ui-border);
+
+    color: var(--editor-ui);
+
+    padding: 2px 8px;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   CODE BLOCK
+   ========================================================= */
+
+.milkdown pre {
+    background: var(--editor-code);
+
+    border: 1px solid var(--editor-ui-border);
+
+    border-radius: 18px;
+
+    padding: 1.5rem;
+
+    overflow-x: auto;
+
+    box-shadow:
+        inset 0 0 0 1px var(--editor-ui-selection);
+}
+
+.milkdown pre code {
+    border: none;
+    background: transparent;
+}
+
+
+/* =========================================================
+   LISTS
+   ========================================================= */
+
+.milkdown ul,
+.milkdown ol {
+    display: block;
+}
+
+.milkdown ul li::marker,
+.milkdown ol li::marker {
+    color: var(--editor-ui);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.milkdown table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.milkdown th {
+    background: var(--editor-ui-selection);
+    color: var(--editor-heading);
+}
+
+.milkdown td,
+.milkdown th {
+    border: 1px solid var(--editor-ui-border);
+
+    padding: 0.9rem 1rem;
+}
+
+
+/* =========================================================
+   HORIZONTAL RULE
+   ========================================================= */
+
+.milkdown hr {
+    border: none;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            var(--editor-ui),
+            transparent);
+
+    opacity: 0.45;
+
+    margin: 3rem 0;
+}
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+.milkdown img {
+    border-radius: 18px;
+
+    border: 1px solid var(--editor-ui-border);
+
+    box-shadow: var(--kairno-shadow);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.milkdown ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.milkdown ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.milkdown ::-webkit-scrollbar-thumb {
+    background: var(--editor-scrollbar);
+
+    border-radius: 999px;
+}
+
+.milkdown ::-webkit-scrollbar-thumb:hover {
+    background: var(--editor-scrollbar-hover);
+}
