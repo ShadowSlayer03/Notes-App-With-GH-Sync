@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `githubAccessToken` text(2048) NOT NULL;
