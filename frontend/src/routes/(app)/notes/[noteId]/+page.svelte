@@ -27,10 +27,12 @@
 		updatedAt: '',
 		updatedBy: ''
 	});
+
+	let viewingHistoricalVersion = $state(false);
 </script>
 
 <div class="p-6 text-white bg-[#0D0F12] h-full">
 	 <!-- SELFNOTE: Added noteId and folderId here since noteDetails gets populated only in Editor  -->
-	<PageHeader {noteId} {folderId} bind:noteDetails bind:changesNotSynced />
-	<Editor {noteId} {folderId} bind:noteDetails bind:changesNotSynced />
+	<PageHeader {noteId} {folderId} bind:noteDetails bind:changesNotSynced bind:viewingHistoricalVersion />
+	<Editor {noteId} {folderId} bind:noteDetails bind:changesNotSynced bind:viewingHistoricalVersion />
 </div>
