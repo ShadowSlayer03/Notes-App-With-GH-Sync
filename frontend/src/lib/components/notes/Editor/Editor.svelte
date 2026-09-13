@@ -4,6 +4,7 @@
 
 	import { onDestroy } from 'svelte';
 	import { Crepe } from '@milkdown/crepe';
+	import { replaceAll } from '@milkdown/kit/utils';
 
 	import { createQuery } from '@tanstack/svelte-query';
 	import { noteThemes } from '$lib/constants/notes';
@@ -12,9 +13,10 @@
 	import { compareOptions } from '$lib/util/noteUtils';
 	import { PUBLIC_BACKEND_URI } from '$env/static/public';
 
-	import { ArrowBigLeftLine, Check, ChevronDown, GitBranch, Link, Palette, Pin } from '@boxicons/svelte';
+	import { ArrowBigLeftLine, Check, ChevronDown, Link, Palette, Pin } from '@boxicons/svelte';
 	import type { Notes, NoteTheme, SharedNoteLink } from '../../../../types/pages/notes.types';
 	import { page } from '$app/state';
+	import VersionSelector from '$lib/components/versions/VersionSelector/VersionSelector.svelte';
 
 	let root: HTMLElement | null = $state(null);
 	let crepe: Crepe | null = null;
@@ -23,12 +25,14 @@
 		noteId,
 		folderId,
 		changesNotSynced = $bindable(),
-		noteDetails = $bindable()
+		noteDetails = $bindable(),
+		viewingHistoricalVersion = $bindable()
 	} = $props<{
 		noteId: string;
 		folderId: string;
 		changesNotSynced: boolean;
 		noteDetails: Notes;
+		viewingHistoricalVersion: boolean;
 	}>();
 
 	const shareId = $derived(page.url.searchParams.get('shareId'));
@@ -39,7 +43,6 @@
 	let pinned = $state(false);
 
 	let showThemePicker = $state(false);
-	let latestVersion = $state('Latest');
 
 	let currentTheme = $derived(noteThemes.find((theme) => theme.id === selectedTheme));
 
@@ -90,6 +93,11 @@
 
 	$effect(() => {
 		if (shareable || !note) return;
+
+		if (viewingHistoricalVersion) {
+			changesNotSynced = true;
+			return;
+		}
 
 		changesNotSynced = compareOptions(
 			{
@@ -183,6 +191,15 @@
 
 		pinned = !pinned;
 	}
+
+	function updateCrepeContent(content: string, isLatest: boolean) {
+		viewingHistoricalVersion = !isLatest;
+		editorContent = content;
+
+		if (!crepe) return;
+
+		crepe.editor.action(replaceAll(content, true));
+	}
 </script>
 
 <div class="editor-shell">
@@ -214,15 +231,12 @@
 	{:else}
 		<div class="relative mb-5 flex items-center justify-between">
 			<div class="flex items-center gap-2">
-				<button
-					class="flex cursor-pointer items-center gap-2 rounded-xl border border-white/8 bg-white/3 px-3 py-2 text-sm text-zinc-300 transition hover:border-fuchsia-500/30 hover:bg-fuchsia-500/10 hover:text-white"
-				>
-					<GitBranch class="text-fuchsia-400" />
-
-					<span>{latestVersion}</span>
-
-					<ChevronDown />
-				</button>
+				<VersionSelector
+					{noteId}
+					{folderId}
+					bind:editorContent
+					onVersionChange={updateCrepeContent}
+				/>
 
 				<button
 					onclick={togglePinned}
