@@ -61,12 +61,14 @@
 	let {
 		search = $bindable(),
 		changesNotSynced = $bindable(),
+		viewingHistoricalVersion = $bindable(),
 		noteDetails = $bindable(),
 		noteId = $bindable(),
 		folderId = $bindable()
 	} = $props<{
 		search?: string;
 		changesNotSynced?: boolean;
+		viewingHistoricalVersion?: boolean;
 		noteId?: string;
 		folderId?: string;
 		noteDetails?: Notes;
@@ -105,6 +107,7 @@
 			changesNotSynced = false;
 
 			queryClient.invalidateQueries({ queryKey: ['get-note-details', folderId, noteId] });
+			queryClient.invalidateQueries({ queryKey: ['get-versions', noteId, folderId] });
 
 			showUpdateNoteDialog = false;
 		},
@@ -172,7 +175,7 @@
 	};
 
 	async function handleAutoSave() {
-		if (!changesNotSynced || !noteDetails) return;
+		if (viewingHistoricalVersion || !changesNotSynced || !noteDetails) return;
 
 		try {
 			await saveNote(noteDetails.desc, 'Auto-saved changes');
