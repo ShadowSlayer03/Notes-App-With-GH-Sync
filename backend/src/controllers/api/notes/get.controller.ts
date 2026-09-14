@@ -43,6 +43,7 @@ const getNoteDetails = async (c: Context) => {
 
         const folderId = c.req.param('folderId');
         const id = c.req.param('id');
+        const ref = c.req.query('ref');
 
         if (!folderId) {
             return error({ c, message: 'Invalid folderId!', statusCode: 400 });
@@ -56,7 +57,7 @@ const getNoteDetails = async (c: Context) => {
 
         const userName = user.profileUrl.split('/').pop() ?? 'User';
 
-        const noteDetails = await getSpecificNoteDetails(decryptedToken, userName, folderId, id)
+        const noteDetails = await getSpecificNoteDetails(decryptedToken, userName, folderId, id, ref);
 
         return success({ c, message: 'Note details retrieved successfully!', data: noteDetails, statusCode: 200 });
 
