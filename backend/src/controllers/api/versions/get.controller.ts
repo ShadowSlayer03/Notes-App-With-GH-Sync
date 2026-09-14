@@ -9,9 +9,6 @@ const getVersionsForNote = async (c: Context) => {
         const noteId = c.req.param('noteId');
         const folderId = c.req.query('folder');
 
-        console.log("NoteId:", noteId);
-        console.log("FolderId:", folderId);
-
         if (!folderId) {
             return error({ c, message: 'Folder name not found!', statusCode: 400 });
         }
