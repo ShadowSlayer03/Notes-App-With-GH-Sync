@@ -46,7 +46,7 @@
 		</div>
 
 		<div class="flex items-center justify-center pb-2">
-			<Icon class={`h-6 w-6 ${folderTheme.icon}`} />
+			<Icon class={`h-6 w-6 ${folderTheme.icon}`} data-testid="folder-icon" />
 		</div>
 
 		<div class="z-20">
@@ -63,11 +63,11 @@
 			</span>
 
 			{#if isLocked}
-				<Lock class="h-3 w-3 text-zinc-500" />
+				<Lock class="h-3 w-3 text-zinc-500" data-testid="lock-icon" />
 			{/if}
 		</div>
 
-		<p class="truncate text-xs text-zinc-500">
+		<p class="truncate text-xs text-zinc-500" data-testid="last-edited">
 			{formatLastEdited(updatedAt)}
 		</p>
 	</div>
