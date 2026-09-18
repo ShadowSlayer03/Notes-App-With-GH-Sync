@@ -385,7 +385,7 @@
 								class="flex w-full cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm text-zinc-300 transition-colors hover:bg-zinc-800/70 hover:text-zinc-100"
 								onclick={() => {
 									showMoreOptions = false;
-									// TODO: open version history
+									goto(`/notes/${noteId}/versions?folder=${folderId}`);
 								}}
 							>
 								<History class="h-4 w-4 text-zinc-500" />
