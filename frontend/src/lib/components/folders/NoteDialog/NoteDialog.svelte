@@ -110,7 +110,7 @@
 
 		<div class="space-y-7 px-7 py-6">
 			<div class="flex flex-col gap-2">
-				<label class="text-sm font-medium text-zinc-300"> Folder </label>
+				<label for="folderSelector" class="text-sm font-medium text-zinc-300"> Folder </label>
 
 				<FolderSelector {folders} bind:selectedFolderId />
 			</div>
