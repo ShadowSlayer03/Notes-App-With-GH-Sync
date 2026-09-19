@@ -1,0 +1,18 @@
+[
+    {
+        "id": "work",
+        "title": "Work",
+        "icon": "",
+        "noteCount": 10
+    } ,
+    {
+        "id": "personal",
+        "title": "Personal",
+        "noteCount": 5
+    },
+    {
+        "id": "todo",
+        "title": "Todo",
+        "noteCount": 20
+    }
+]
