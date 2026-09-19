@@ -1,0 +1,51 @@
+{
+    "message": "Notes retrieved successfully!",
+    "data": {
+        "folder": {
+            "name": "my-notes",
+            "path": "my-notes"
+        },
+        "notes": [
+            {
+                "title": "test",
+                "desc": "Test data content",
+                "folder": "my-notes",
+                "theme": "dots",
+                "pinned": true,
+                "updatedAt": "2026-08-25T16:11:35.770Z",
+                "updatedBy": "John123",
+                "updatedByAvatarUrl": "https://example.com/john.png"
+            },
+            {
+                "title": "meeting_notes",
+                "desc": "Meeting Notes mate",
+                "folder": "my-notes",
+                "theme": "default",
+                "pinned": false,
+                "updatedAt": "2026-08-01T19:06:48.183Z",
+                "updatedBy": "John123",
+                "updatedByAvatarUrl": "https://example.com/john.png"
+            },
+            {
+                "title": "todo_list",
+                "desc": "To do list for things to do this weekend",
+                "folder": "my-notes",
+                "theme": "midnight",
+                "pinned": true,
+                "updatedAt": "2026-09-19T10:45:36.751Z",
+                "updatedBy": "John123",
+                "updatedByAvatarUrl": "https://example.com/john.png"
+            },
+            {
+                "title": "our_notes",
+                "desc": "This is our notes",
+                "folder": "my-notes",
+                "theme": "default",
+                "pinned": false,
+                "updatedAt": "2026-08-01T19:08:19.885Z",
+                "updatedBy": "John123",
+                "updatedByAvatarUrl": "https://example.com/john.png"
+            }
+        ]
+    }
+}
