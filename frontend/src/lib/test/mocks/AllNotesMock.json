@@ -1,0 +1,93 @@
+{
+    "message": "Notes retrieved successfully",
+    "data": [
+        {
+            "folder": {
+                "name": "work",
+                "path": "work"
+            },
+            "notes": [
+                {
+                    "id": "meeting_notes",
+                    "title": "meeting_notes",
+                    "desc": "Notes from the standup",
+                    "folder": "work",
+                    "data": "",
+                    "theme": "default",
+                    "pinned": false,
+                    "updatedAt": "2024-06-01T10:00:00Z",
+                    "updatedBy": "alice",
+                    "updatedByAvatarUrl": "https://example.com/alice.png"
+                },
+                {
+                    "id": "project_plan",
+                    "title": "project_plan",
+                    "desc": "Q3 planning doc",
+                    "folder": "work",
+                    "data": "",
+                    "theme": "default",
+                    "pinned": true,
+                    "updatedAt": "2024-06-02T09:00:00Z",
+                    "updatedBy": "alice",
+                    "updatedByAvatarUrl": "https://example.com/alice.png"
+                }
+            ]
+        },
+        {
+            "folder": {
+                "name": "personal",
+                "path": "personal"
+            },
+            "notes": [
+                {
+                    "id": "journal",
+                    "title": "journal",
+                    "desc": "Daily thoughts",
+                    "folder": "personal",
+                    "data": "",
+                    "theme": "paper",
+                    "pinned": false,
+                    "updatedAt": "2024-05-30T08:00:00Z",
+                    "updatedBy": "alice",
+                    "updatedByAvatarUrl": "https://example.com/alice.png"
+                },
+                {
+                    "id": "bucket_list",
+                    "title": "bucket_list",
+                    "desc": "Things to do",
+                    "folder": "personal",
+                    "data": "",
+                    "theme": "default",
+                    "pinned": false,
+                    "updatedAt": "2024-05-29T12:00:00Z",
+                    "updatedBy": "bob",
+                    "updatedByAvatarUrl": "https://example.com/bob.png"
+                },
+                {
+                    "id": "recipes",
+                    "title": "recipes",
+                    "desc": "Favourite meals",
+                    "folder": "personal",
+                    "data": "",
+                    "theme": "default",
+                    "pinned": false,
+                    "updatedAt": "2024-05-28T07:00:00Z",
+                    "updatedBy": "bob",
+                    "updatedByAvatarUrl": "https://example.com/bob.png"
+                },
+                {
+                    "id": "sixth_note",
+                    "title": "sixth_note",
+                    "desc": "Should not appear",
+                    "folder": "personal",
+                    "data": "",
+                    "theme": "default",
+                    "pinned": false,
+                    "updatedAt": "2024-05-27T06:00:00Z",
+                    "updatedBy": "bob",
+                    "updatedByAvatarUrl": "https://example.com/bob.png"
+                }
+            ]
+        }
+    ]
+}
