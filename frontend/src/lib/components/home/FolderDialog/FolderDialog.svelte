@@ -76,6 +76,7 @@
 	onclick={(e) => {
 		if (e.target === e.currentTarget) cancel();
 	}}
+	data-testid="folder-dialog"
 >
 	<div
 		class="w-full max-w-lg rounded-3xl border border-zinc-800 bg-[#111318] shadow-2xl shadow-black/50"
@@ -87,9 +88,10 @@
 
 		<div class="space-y-8 px-7 py-6">
 			<div class="space-y-2 flex flex-col gap-0.5">
-				<span class="text-sm font-medium text-zinc-300"> Folder Name </span>
+				<label for="folder-name" class="text-sm font-medium text-zinc-300"> Folder Name </label>
 
 				<input
+					id="folder-name"
 					bind:value={title}
 					placeholder="Personal"
 					class="w-full rounded-xl border border-zinc-800 bg-[#181b22] px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-violet-500/70"
@@ -153,6 +155,7 @@
 					{#each icons as icon}
 						<button
 							type="button"
+							aria-label={`Select ${icon.id} icon`}
 							onclick={() => (selectedIcon = icon.id)}
 							class="flex p-3 items-center justify-center rounded-xl border transition cursor-pointer
 								{selectedIcon === icon.id
