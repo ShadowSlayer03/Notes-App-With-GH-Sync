@@ -3,6 +3,7 @@
 	import FolderBox from '../FolderBox/FolderBox.svelte';
 	import FolderBoxCreate from '../FolderBoxCreate/FolderBoxCreate.svelte';
 	import FolderSkeleton from '../FolderSkeleton/FolderSkeleton.svelte';
+	import { goto } from '$app/navigation';
 
 	/*
 	const foldersConstants = [
@@ -56,13 +57,18 @@
 	 */
 
 	const { folders, isLoading } = $props();
+
+	const handleClickViewAllFolders = () => {
+		goto('/all');
+	};
 </script>
 
 <div class="space-y-4 px-2">
 	<div class="flex items-center justify-between">
-		<h2 class="text-sm font-semibold text-zinc-300 tracking-wider uppercase">Folders</h2>
+		<h2 class="text-sm font-semibold text-zinc-300 tracking-wider uppercase" data-testid="folderlist-heading">Folders</h2>
 		<button
 			class="flex items-center gap-0.5 text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors cursor-pointer"
+			onclick={handleClickViewAllFolders}
 		>
 			<span>View all</span>
 			<ChevronRight class="h-3.5 w-3.5" />
@@ -75,7 +81,7 @@
 				<FolderSkeleton />
 			{/each}
 		{:else}
-			{#each folders as folder}
+			{#each folders.slice(0, 5) as folder}
 				<FolderBox {...folder} />
 			{/each}
 
