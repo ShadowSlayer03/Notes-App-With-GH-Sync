@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { ArrowBigLeftLine, HomeAlt2, SearchAlt } from '@boxicons/svelte';
+	import { ArrowBigLeftLine, HomeAlt2 } from '@boxicons/svelte';
 
 	function goHome() {
 		goto('/home');
