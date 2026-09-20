@@ -138,7 +138,7 @@
 	>
 		<PageHeader bind:search />
 
-		<div class="flex-1 w-full overflow-x-auto mt-10 mb-4">
+		<div class="px-4 flex-1 w-full overflow-x-auto mt-8 mb-4">
 			<table class="w-full text-left border-collapse min-w-175">
 				<thead>
 					<tr
