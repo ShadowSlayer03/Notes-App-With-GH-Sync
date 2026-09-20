@@ -6,7 +6,7 @@
 	<div
 		class="mb-6 flex h-18 w-18 items-center justify-center rounded-3xl border border-zinc-800 bg-[#181B22]"
 	>
-		<Note class="h-8 w-8 text-zinc-500" />
+		<Note class="h-8 w-8 text-zinc-500" data-testid="note-icon" />
 	</div>
 
 	<h2 class="text-2xl font-semibold text-zinc-100">No notes yet</h2>
