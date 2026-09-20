@@ -98,7 +98,7 @@
 			<h1 class="text-2xl font-semibold tracking-tight">Welcome back,</h1>
 
 			<h2 class="mt-1 text-xl text-zinc-200">
-				{userQuery.data.name ?? 'Developer'}
+				{userQuery.data.name ?? 'Github User'}
 			</h2>
 
 			<p class="mt-4 text-center text-sm text-zinc-500">Your GitHub identity has been verified.</p>
