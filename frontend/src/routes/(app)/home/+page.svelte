@@ -25,14 +25,18 @@
 	const folders = $derived.by(() => {
 		const result = getAllFoldersQuery.data ?? [];
 
-		return result.filter((folder: Folder)=>folder.title.toLowerCase().includes(search.toLowerCase()))
+		return result.filter((folder: Folder) =>
+			folder.title.toLowerCase().includes(search.toLowerCase())
+		);
 	});
 </script>
 
 <div class="p-6 text-white bg-[#0D0F12] h-full">
 	<PageHeader bind:search />
-	<div class="mt-5 mb-10">
-		<FolderList {folders} {isLoading} />
+	<div class="p-4">
+		<div class="mt-5 mb-10">
+			<FolderList {folders} {isLoading} />
+		</div>
+		<RecentNotes />
 	</div>
-	<RecentNotes />
 </div>
