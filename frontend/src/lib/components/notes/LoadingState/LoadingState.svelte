@@ -1,10 +1,4 @@
-<script>
-	import PageHeader from "$lib/components/PageHeader.svelte";
-
-</script>
-<div class="p-6 bg-[#0D0F12] h-full flex flex-col">
-	<PageHeader />
-
+<div class="p-4 bg-[#0D0F12] h-full flex flex-col">
 	<div class="mt-6 mb-4">
 		<div class="h-8 w-40 rounded-xl bg-zinc-800/60 animate-pulse"></div>
 	</div>
@@ -25,10 +19,10 @@
 					<tr class="border-b border-zinc-800/30">
 						<td class="px-4 py-4">
 							<div class="flex items-center gap-3">
-								<div class="h-10 w-10 rounded-xl bg-zinc-800 animate-pulse"></div>
+								<div class="h-10 w-10 rounded-xl bg-zinc-800 animate-pulse" data-testid="icon-skeleton"></div>
 
 								<div class="flex flex-col gap-2">
-									<div class="h-4 w-48 rounded bg-zinc-800 animate-pulse"></div>
+									<div class="h-4 w-48 rounded bg-zinc-800 animate-pulse" data-testid="title-skeleton"></div>
 
 									<div class="h-3 w-80 rounded bg-zinc-900 animate-pulse"></div>
 								</div>
@@ -36,11 +30,11 @@
 						</td>
 
 						<td>
-							<div class="h-3 w-28 rounded bg-zinc-800 animate-pulse"></div>
+							<div class="h-3 w-28 rounded bg-zinc-800 animate-pulse" data-testid="last-edited-skeleton"></div>
 						</td>
 
 						<td>
-							<div class="flex items-center gap-2">
+							<div class="flex items-center gap-2" data-testid="updated-by-skeleton">
 								<div class="h-5 w-5 rounded-full bg-zinc-800 animate-pulse"></div>
 
 								<div class="h-3 w-24 rounded bg-zinc-800 animate-pulse"></div>
