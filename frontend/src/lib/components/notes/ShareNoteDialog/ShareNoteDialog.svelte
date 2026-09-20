@@ -88,12 +88,14 @@
 		onclick={(event) => {
 			if (event.target === event.currentTarget) close();
 		}}
+		data-testid="share-note-dialog-backdrop"
 	>
 		<div
 			class="w-full max-w-md overflow-hidden rounded-2xl border border-zinc-800 bg-[#111318] shadow-2xl shadow-black/50"
 			role="dialog"
 			aria-modal="true"
 			aria-labelledby="share-note-title"
+			data-testid="share-note-dialog"
 		>
 			<div class="flex items-start justify-between border-b border-zinc-800/80 px-6 py-5">
 				<div>
