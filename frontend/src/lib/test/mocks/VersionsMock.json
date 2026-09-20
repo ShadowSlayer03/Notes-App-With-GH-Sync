@@ -2,16 +2,18 @@
     "message": "Retrieved note versions successfully",
     "data": [
         {
-            "sha": "1234567890abcdef1234567890abcdef12345678",
+                        "sha": "1234567890abcdef1234567890abcdef12345678",
             "label": "Did ABC",
             "date": "2026-09-19T12:47:23Z",
-            "committerUsername": "John123"
+            "committerUsername": "John123",
+            "content": "# Latest version\n\nThis is the latest version of the note."
         },
         {
             "sha": "5446247890abcdef1234567890abcdef12345678",
             "label": "Tested ABC",
             "date": "2026-09-19T10:45:37Z",
-            "committerUsername": "John123"
+            "committerUsername": "John123",
+            "content": "# Tested version\n\nThis is a tested version of the note."
         },
         {
             "sha": "32421d9c141dcd9d9873d7cba9ed792bade89f10",
