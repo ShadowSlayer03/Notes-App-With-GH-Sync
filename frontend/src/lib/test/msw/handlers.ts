@@ -13,7 +13,7 @@ export const handlers = [
 
         if (url.searchParams.get('folder') !== 'all-notes') {
             return new HttpResponse(SpecificNotesMock, {
-                status: 400
+                status: 200
             });
         }
 
