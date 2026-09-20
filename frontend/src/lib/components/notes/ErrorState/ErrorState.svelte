@@ -13,7 +13,7 @@
 	<div
 		class="mb-6 flex h-18 w-18 items-center justify-center rounded-3xl border border-red-500/20 bg-red-500/8"
 	>
-		<Note class="h-8 w-8 text-red-400 opacity-80" />
+		<Note class="h-8 w-8 text-red-400 opacity-80" data-testid="note-icon" />
 	</div>
 
 	<h2 class="text-2xl font-semibold text-zinc-100">Couldn't load your notes</h2>
