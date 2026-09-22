@@ -6,12 +6,14 @@
 		folders: Folder[];
 		selectedFolderId: string;
 		placeholder?: string;
+		id?: string;
 	};
 
 	let {
 		folders,
 		selectedFolderId = $bindable(),
-		placeholder = 'Select a folder'
+		placeholder = 'Select a folder',
+		id = undefined
 	}: Props = $props();
 
 	let open = $state(false);
@@ -42,6 +44,7 @@
 
 <div bind:this={wrapper} class="relative">
 	<button
+		{id}
 		type="button"
 		onclick={(e) => {
 			e.stopPropagation();
