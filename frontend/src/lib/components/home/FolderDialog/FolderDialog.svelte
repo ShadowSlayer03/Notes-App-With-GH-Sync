@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { FolderTheme } from '../../../../types/pages/folder.types';
 	import { icons, themes } from '$lib/constants/folders';
-	import { createMutation } from '@tanstack/svelte-query';
+	import { createMutation, setQueryClientContext } from '@tanstack/svelte-query';
 	import { api } from '$lib/util/api';
 	import queryClient from '$lib/util/queryClient';
 	import { replaceSpacesWithDashes } from '$lib/util/folderUtils';
@@ -15,6 +15,10 @@
 	let selectedTheme = $state<FolderTheme>('paper');
 	let selectedIcon = $state('folder');
 	let isLocked = $state(false);
+
+	// Provide the QueryClient in context so createMutation works even when this
+	// component is rendered without a parent QueryClientProvider (e.g. in tests).
+	setQueryClientContext(queryClient);
 
 	let errorMessage = $state();
 
@@ -72,10 +76,12 @@
 />
 
 <dialog
+	open
 	class="fixed inset-0 z-200 h-full w-full flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
 	onclick={(e) => {
 		if (e.target === e.currentTarget) cancel();
 	}}
+	oncancel={(e) => { e.preventDefault(); cancel(); }}
 	data-testid="folder-dialog"
 >
 	<div
