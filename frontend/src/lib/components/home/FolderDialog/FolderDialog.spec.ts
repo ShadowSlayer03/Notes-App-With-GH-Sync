@@ -198,7 +198,7 @@ test('calls the cancel callback when Escape is pressed', async () => {
 		}
 	});
 
-	await userEvent.keyboard('Escape'); 
+	await userEvent.keyboard('{Escape}');
 
 	expect(cancel).toHaveBeenCalledTimes(1);
 });
