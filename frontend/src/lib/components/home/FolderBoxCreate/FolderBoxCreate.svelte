@@ -31,6 +31,6 @@
 		class="text-xs font-medium text-zinc-500 mt-3 group-hover:text-zinc-400 text-center leading-tight"
 		data-testid="create-new-folder-text"
 	>
-		Create new<br />folder
+		Create new<br /> folder
 	</span>
 </button>
