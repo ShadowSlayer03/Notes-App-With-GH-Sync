@@ -4,8 +4,8 @@
 	import { createMutation } from '@tanstack/svelte-query';
 	import { PUBLIC_BACKEND_URI } from '$env/static/public';
 	import { api } from '$lib/util/api';
-	import queryClient from '$lib/util/queryClient';
 	import { goto } from '$app/navigation';
+	import queryClient from '$lib/util/queryClient';
 
 	let {
 		deleteDialogOpen = $bindable(),
@@ -93,6 +93,7 @@
 			deleteDialogOpen = false;
 		}
 	}}
+	data-testid="delete-note-dialog-backdrop"
 >
 	<div
 		class="w-full max-w-lg overflow-hidden rounded-2xl border border-zinc-800 bg-[#111318] shadow-2xl shadow-black/50"
@@ -100,6 +101,7 @@
 		aria-modal="true"
 		aria-labelledby="delete-note-title"
 		aria-describedby="delete-note-description"
+		data-testid="delete-note-dialog"
 	>
 		<div class="p-6">
 			{#if changesNotSynced}
