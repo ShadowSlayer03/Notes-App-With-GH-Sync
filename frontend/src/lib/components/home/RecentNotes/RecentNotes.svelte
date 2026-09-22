@@ -7,55 +7,6 @@
 	import { formatLastEditedDate, getNoteColor, normalizeTitlesOfNotes } from '$lib/util/noteUtils';
 	import { PUBLIC_BACKEND_URI } from '$env/static/public';
 
-	const recentsConst = [
-		{
-			id: '1',
-			title: 'Project Brainstorm',
-			desc: 'Ideas and initial thoughts for project X',
-			time: 'Today at 11:23',
-			avatar:
-				'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=40&q=80',
-			iconColor: 'text-purple-400 bg-purple-500/10'
-		},
-		{
-			id: '2',
-			title: 'Product Roadmap',
-			desc: 'Roadmap and planning for 2024',
-			time: 'Today at 10:15',
-			avatar:
-				'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=40&q=80',
-			iconColor: 'text-amber-400 bg-amber-500/10'
-		},
-		{
-			id: '3',
-			title: 'Meeting Notes – Apr 24',
-			desc: 'Notes from the sync with product team',
-			time: 'Yesterday at 18:42',
-			avatar:
-				'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=40&q=80',
-			iconColor: 'text-blue-400 bg-blue-500/10'
-		},
-		{
-			id: '4',
-			title: 'Design System Ideas',
-			desc: 'Component ideas and improvements',
-			time: 'Yesterday at 16:09',
-			isStarred: true,
-			avatar:
-				'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=40&q=80',
-			iconColor: 'text-emerald-400 bg-emerald-500/10'
-		},
-		{
-			id: '5',
-			title: 'User Research Summary',
-			desc: 'Key takeaways from interviews',
-			time: 'Apr 23, 2024',
-			avatar:
-				'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=40&q=80',
-			iconColor: 'text-purple-400 bg-purple-500/10'
-		}
-	];
-
 	const getNotesQuery = createQuery(() => ({
 		queryKey: ['get-notes', 'all-notes'],
 		queryFn: () =>
