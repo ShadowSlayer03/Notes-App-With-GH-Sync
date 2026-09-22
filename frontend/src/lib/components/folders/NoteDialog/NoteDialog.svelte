@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createMutation, createQuery } from '@tanstack/svelte-query';
+	import { createMutation, createQuery, setQueryClientContext } from '@tanstack/svelte-query';
 	import { api } from '$lib/util/api';
 	import type { Folder } from '../../../../types/pages/folder.types';
 	import FolderSelector from '../FolderSelector/FolderSelector.svelte';
@@ -15,6 +15,10 @@
 	let noteTitle = $state('');
 	let noteDescription = $state('');
 	let errorMessage = $state('');
+
+	// Provide the QueryClient in context so createQuery/createMutation work even
+	// when this component is rendered without a parent QueryClientProvider (e.g. in tests).
+	setQueryClientContext(queryClient);
 
 	const getAllFoldersQuery = createQuery(() => ({
 		queryKey: ['get-folders'],
@@ -94,6 +98,7 @@
 />
 
 <dialog
+	open
 	class="fixed inset-0 z-200 flex h-full w-full items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
 	onclick={(e) => {
 		if (e.target === e.currentTarget) cancel();
@@ -112,7 +117,7 @@
 			<div class="flex flex-col gap-2">
 				<label for="folderSelector" class="text-sm font-medium text-zinc-300"> Folder </label>
 
-				<FolderSelector {folders} bind:selectedFolderId />
+				<FolderSelector {folders} id="folderSelector" bind:selectedFolderId />
 			</div>
 
 			<div class="flex flex-col gap-2">
