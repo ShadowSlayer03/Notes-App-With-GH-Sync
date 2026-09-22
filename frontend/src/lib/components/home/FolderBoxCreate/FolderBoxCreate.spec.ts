@@ -2,10 +2,10 @@ import { expect, test } from 'vitest';
 import { render } from 'vitest-browser-svelte';
 import { page } from 'vitest/browser';
 
-import FolderBoxCreate from './FolderBoxCreate.svelte';
+import FolderBoxCreateQueryWrapper from '$lib/test/wrappers/FolderBoxCreateQueryWrapper.svelte';
 
 test('renders the create folder button correctly', async () => {
-	render(FolderBoxCreate);
+	render(FolderBoxCreateQueryWrapper);
 
 	await expect
 		.element(page.getByTestId('create-new-folder-button'))
@@ -16,12 +16,12 @@ test('renders the create folder button correctly', async () => {
 		.toBeInTheDocument();
 
 	await expect
-		.element(page.getByTestId('create-new-folder-text'))
-		.toHaveTextContent('Create new folder');
+			.element(page.getByTestId('create-new-folder-text'))
+			.toHaveTextContent('Create new folder');
 });
 
 test('does not show the folder dialog initially', async () => {
-	render(FolderBoxCreate);
+	render(FolderBoxCreateQueryWrapper);
 
 	await expect
 		.element(page.getByTestId('folder-dialog'))
@@ -29,7 +29,7 @@ test('does not show the folder dialog initially', async () => {
 });
 
 test('opens the folder dialog when the create button is clicked', async () => {
-	render(FolderBoxCreate);
+	render(FolderBoxCreateQueryWrapper);
 
 	await page
 		.getByTestId('create-new-folder-button')
@@ -45,7 +45,7 @@ test('opens the folder dialog when the create button is clicked', async () => {
 });
 
 test('closes the folder dialog when cancel is clicked', async () => {
-	render(FolderBoxCreate);
+	render(FolderBoxCreateQueryWrapper);
 
 	await page
 		.getByTestId('create-new-folder-button')
