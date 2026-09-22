@@ -6,10 +6,11 @@
 	import { Crepe } from '@milkdown/crepe';
 	import { replaceAll } from '@milkdown/kit/utils';
 
-	import { createQuery } from '@tanstack/svelte-query';
+	import { createQuery, setQueryClientContext } from '@tanstack/svelte-query';
 	import { noteThemes } from '$lib/constants/notes';
 
 	import { api } from '$lib/util/api';
+	import queryClient from '$lib/util/queryClient';
 	import { compareOptions } from '$lib/util/noteUtils';
 	import { PUBLIC_BACKEND_URI } from '$env/static/public';
 
@@ -17,6 +18,7 @@
 	import type { Notes, NoteTheme, SharedNoteLink } from '../../../../types/pages/notes.types';
 	import { page } from '$app/state';
 	import VersionSelector from '$lib/components/versions/VersionSelector/VersionSelector.svelte';
+	import ErrorState from '$lib/components/notes/ErrorState/ErrorState.svelte';
 
 	let root: HTMLElement | null = $state(null);
 	let crepe: Crepe | null = null;
@@ -24,8 +26,9 @@
 	let {
 		noteId,
 		folderId,
-		changesNotSynced = $bindable(),
-		noteDetails = $bindable(),
+		// Assigned to propagate to the parent via the bindable proxy, never read locally.
+		changesNotSynced = $bindable(), // eslint-disable-line no-useless-assignment
+		noteDetails = $bindable(), // eslint-disable-line no-useless-assignment
 		viewingHistoricalVersion = $bindable()
 	} = $props<{
 		noteId: string;
@@ -34,6 +37,8 @@
 		noteDetails: Notes;
 		viewingHistoricalVersion: boolean;
 	}>();
+
+	setQueryClientContext(queryClient);
 
 	const shareId = $derived(page.url.searchParams.get('shareId'));
 	const shareable = $derived(Boolean(shareId));
@@ -123,15 +128,14 @@
 	$effect(() => {
 		if (!root || crepe || isLoading || isError) return;
 
-		let contentInsideEditor: string = '';
+		let contentInsideEditor: string;
 
 		if (shareable) {
 			contentInsideEditor = shareableContent ?? 'Default note';
 		} else {
 			contentInsideEditor =
 				localStorage.getItem(`note-${folderId}-${noteId}`) ??
-				note?.data ??
-				'Start writing something legendary...';
+				(note?.data || 'Start writing something legendary...');
 		}
 
 		editorContent = contentInsideEditor;
@@ -228,18 +232,19 @@
 				</button>
 			</div>
 		</div>
+	{:else if !shareable && isError}
+		<ErrorState
+			message={getNoteDetailsQuery.error?.message ?? 'Something went wrong.'}
+			refetch={() => getNoteDetailsQuery.refetch()}
+		/>
 	{:else}
 		<div class="relative mb-5 flex items-center justify-between">
 			<div class="flex items-center gap-2">
-				<VersionSelector
-					{noteId}
-					{folderId}
-					bind:editorContent
-					onVersionChange={updateCrepeContent}
-				/>
+				<VersionSelector {noteId} {folderId} onContentChange={updateCrepeContent} />
 
 				<button
 					onclick={togglePinned}
+					data-testid="pin-note-toggle"
 					class={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border transition
 
 				${
@@ -279,9 +284,10 @@
 
 			{#if showThemePicker}
 				<div
+					data-testid="theme-picker"
 					class="absolute right-0 top-14 z-50 grid w-[470px] grid-cols-2 gap-3 rounded-3xl border border-white/8 bg-zinc-950/95 p-4 shadow-2xl backdrop-blur-xl"
 				>
-					{#each noteThemes as theme}
+					{#each noteThemes as theme (theme.id)}
 						<button
 							onclick={() => selectTheme(theme.id)}
 							class={`group flex cursor-pointer items-center gap-4 rounded-2xl border p-3 text-left transition
