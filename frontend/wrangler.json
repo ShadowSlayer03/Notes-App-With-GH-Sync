@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "frontend",
+  "name": "notes-app-with-gh-sync-frontend",
   "pages_build_output_dir": "./build",
   "compatibility_date": "2026-06-07",
   "compatibility_flags": ["nodejs_als"]
