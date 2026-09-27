@@ -3,21 +3,26 @@
   "name": "notes-app-with-gh-sync-backend",
   "main": "src/index.ts",
   "compatibility_date": "2026-06-07",
-
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+  },
   "queues": {
     "producers": [
       {
         "binding": "REPOSITORY_QUEUE",
-        "queue": "repository-queue"
+        "queue": "repository-queue",
       },
       {
         "binding": "AI_QUEUE",
-        "queue": "ai-queue"
+        "queue": "ai-queue",
       },
       {
         "binding": "MEDIA_QUEUE",
-        "queue": "media-queue"
-      }
+        "queue": "media-queue",
+      },
     ],
 
     "consumers": [
@@ -25,20 +30,20 @@
         "queue": "repository-queue",
         "max_batch_size": 10,
         "max_batch_timeout": 5,
-        "max_retries": 3
+        "max_retries": 3,
       },
       {
         "queue": "ai-queue",
         "max_batch_size": 5,
         "max_batch_timeout": 5,
-        "max_retries": 3
+        "max_retries": 3,
       },
       {
         "queue": "media-queue",
         "max_batch_size": 5,
         "max_batch_timeout": 5,
-        "max_retries": 3
-      }
-    ]
-  }
+        "max_retries": 3,
+      },
+    ],
+  },
 }
