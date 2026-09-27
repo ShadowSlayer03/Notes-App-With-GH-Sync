@@ -39,4 +39,10 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deploying to Cloudflare Pages
+
+Create a **Pages** project with its root directory set to `frontend` (this repository also contains a separate backend). Set the build command to `bun run build` and the output directory to `build`, as configured in `wrangler.json`. In the Pages project's build environment, set `PUBLIC_BACKEND_URI` to the deployed backend's public URL; the local `.env` points to localhost and is not committed.
+
+The build script sets `CF_PAGES=1` so `@sveltejs/adapter-auto` detects Pages. During a Pages build, adapter-auto installs/loads the Cloudflare adapter automatically; no direct adapter-cloudflare dependency is needed in this project's package.json.
+
+For a manual deployment from this directory, run `bun --bun run build` followed by `bunx wrangler pages deploy build --project-name frontend` (after creating the Pages project). Running the build with Bun's runtime also avoids an adapter-auto dynamic-import path error on Windows. In the Git-connected Pages integration, Cloudflare handles the deployment after the build. `wrangler deploy` deploys a Workers project and does not deploy this Pages output.
