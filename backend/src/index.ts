@@ -19,11 +19,18 @@ const app = new Hono();
 app.use(etag(), logger());
 
 app.use(
-  '/api/*',
-  cors({
-    origin: ['http://localhost:5173'],
-    credentials: true // frontend can send cookies
-  })
+	'/api/*',
+	cors({
+		origin: (origin, c) => {
+			const allowedOrigins = [
+				'http://localhost:5173',
+				c.env.FRONTEND_MAIN_URI
+			];
+
+			return allowedOrigins.includes(origin) ? origin : '';
+		},
+		credentials: true
+	})
 );
 
 app.use('/api/*', validateSession);
@@ -42,7 +49,7 @@ app.route('/api/versions', versionsAPIRouter);
 export default {
   fetch: app.fetch,
   async queue(
-    batch: 
+    batch:
     | MessageBatch<RepositoryJob>
     | MessageBatch<AIJob>
     | MessageBatch<MediaJob>, env: Env) {
