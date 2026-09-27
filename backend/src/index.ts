@@ -29,7 +29,11 @@ app.use(
 			const allowedOrigins = [
 				'http://localhost:5173',
 				FRONTEND_MAIN_URI
-			];
+      ];
+
+			console.log("origin", origin)
+			console.log("FRONTEND_MAIN_URI", FRONTEND_MAIN_URI)
+      console.log("allowedOrigins:", allowedOrigins.includes(origin) ? origin : '');
 
 			return allowedOrigins.includes(origin) ? origin : '';
 		},
