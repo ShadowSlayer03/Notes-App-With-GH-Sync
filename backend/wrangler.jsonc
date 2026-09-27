@@ -46,4 +46,10 @@
       },
     ],
   },
+  "vars": {
+    "BACKEND_MAIN_URI": "https://api.kairno.dev",
+    "FRONTEND_MAIN_URI": "https://kairno.dev",
+    "GITHUB_OAUTH_CLIENT_ID": "Ov23li0zrrgdqT9icgF4",
+    "TURSO_DATABASE_URL": "libsql://kairno-notes-shadowslayer03.aws-ap-south-1.turso.io",
+  }
 }
