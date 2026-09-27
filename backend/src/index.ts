@@ -13,6 +13,7 @@ import userAPIRouter from './routes/api/user.route';
 import folderAPIRouter from './routes/api/folders.route';
 import notesAPIRouter from './routes/api/notes.route';
 import versionsAPIRouter from './routes/api/versions.route';
+import { env } from 'hono/adapter';
 
 const app = new Hono();
 
@@ -21,10 +22,13 @@ app.use(etag(), logger());
 app.use(
 	'/api/*',
 	cors({
-		origin: (origin, c) => {
+    origin: (origin, c) => {
+
+      const { FRONTEND_MAIN_URI } = env(c);
+
 			const allowedOrigins = [
 				'http://localhost:5173',
-				c.env.FRONTEND_MAIN_URI
+				FRONTEND_MAIN_URI
 			];
 
 			return allowedOrigins.includes(origin) ? origin : '';
