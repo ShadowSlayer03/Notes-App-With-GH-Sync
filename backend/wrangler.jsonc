@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "backend",
+  "name": "notes-app-with-gh-sync-backend",
   "main": "src/index.ts",
   "compatibility_date": "2026-06-07",
 
